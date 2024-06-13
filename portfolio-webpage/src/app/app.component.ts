@@ -7,6 +7,7 @@ import { CardsComponent } from './components/cards/cards.component';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { DUMMY_DATA } from './data/card.data';
 import { Card } from './interfaces/card.interface';
+import { VisibilityService } from './services/visibility.service';
 
 @Component({
   selector: 'app-root',
@@ -18,9 +19,11 @@ import { Card } from './interfaces/card.interface';
 export class AppComponent {
   title = 'portfolio-webpage';
   cards!: Card[];
-
+  constructor(private visibilityService: VisibilityService) {
+  }
   ngOnInit(): void {
     initFlowbite();
+    this.visibilityService.show();
     this.cards = DUMMY_DATA
   }
 }
