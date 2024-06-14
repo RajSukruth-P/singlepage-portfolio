@@ -3,13 +3,13 @@ import { VisibilityService } from '../../services/visibility.service';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-registration',
   standalone: true,
   imports: [ RouterLink ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  templateUrl: './registration.component.html',
+  styleUrl: './registration.component.scss'
 })
-export class LoginComponent implements OnDestroy,OnInit {
+export class RegistrationComponent implements OnDestroy,OnInit {
   constructor(private visibilityService: VisibilityService) {}
   ngOnInit(): void {
     this.visibilityService.hide();
